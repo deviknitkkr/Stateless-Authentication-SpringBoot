@@ -1,5 +1,6 @@
 package com.devik;
 
+import com.auth0.jwt.algorithms.Algorithm;
 import com.devik.entity.Role;
 import com.devik.entity.User;
 import com.devik.service.UserService;
@@ -46,4 +47,5 @@ public class JwtAuthenticationApplication {
 
         };
     }
+
 }
