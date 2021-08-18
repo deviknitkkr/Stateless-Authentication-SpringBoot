@@ -1,5 +1,6 @@
 package com.devik.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,10 +27,14 @@ public class User implements UserDetails {
     )
     @Column(updatable = false, nullable = false, columnDefinition = "VARCHAR(36)")
     private String id;
+
     private String name;
     private String userName;
+
+    @JsonIgnore
     private String password;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Role> roles = new ArrayList<>();
 

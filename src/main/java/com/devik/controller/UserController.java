@@ -17,35 +17,35 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
     @GetMapping("/user/{username}")
-    public User getUser(@PathVariable("username") String username){
+    public User getUser(@PathVariable("username") String username) {
         return userService.getUser(username);
     }
 
     @GetMapping("/users")
-    public Page<User> getAllUser(Pageable pageable){
+    public Page<User> getAllUser(Pageable pageable) {
         return userService.getAllUser(pageable);
     }
 
     @PostMapping("/role")
-    public Role addRole(@RequestBody Role role){
+    public Role addRole(@RequestBody Role role) {
         return userService.saveRole(role);
     }
 
     @PostMapping("/role/addtouser")
-    public User addRoleToUser(@RequestBody UserNameRoleName userNameRoleName){
-        return userService.addRoleToUser(userNameRoleName.getUsername(),userNameRoleName.getRolename());
+    public User addRoleToUser(@RequestBody UserNameRoleName userNameRoleName) {
+        return userService.addRoleToUser(userNameRoleName.getUsername(), userNameRoleName.getRolename());
     }
 
 }
 
 @Data
 @AllArgsConstructor
-class UserNameRoleName{
+class UserNameRoleName {
     private String username;
     private String rolename;
 }

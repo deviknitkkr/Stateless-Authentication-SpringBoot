@@ -6,13 +6,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface UserService {
-    public User saveUser(User user);
+    User saveUser(User user);
 
-    public User getUser(String username);
+    User getUser(String username);
 
-    public Role saveRole(Role role);
+    Role saveRole(Role role);
 
-    public User addRoleToUser(String username, String rolename);
+    User addRoleToUser(String username, String rolename);
 
-    public Page<User> getAllUser(Pageable pageable);
+    Page<User> getAllUser(Pageable pageable);
 }
